@@ -59,8 +59,6 @@ main {
 }
 
 
-/************Display****************************/
-
 .display {
   background-color: var(--t1-screen-background);
   color: var(--t1-text-display);
@@ -73,8 +71,6 @@ main {
   border-radius:8px;
 }
 
-
-/************Calculator Keys********************/
 
 .bottom {
   margin-top: 1rem;
