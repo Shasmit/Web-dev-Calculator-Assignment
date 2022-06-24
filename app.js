@@ -24,15 +24,14 @@ document.body.addEventListener("click", (e) => {
         buffer.pop();
         buffer.push(key);
       } else if (isNaN(last) == false) {
-        /*last is a num, so merge with new num*/
         num = buffer.pop();
         if (num === "0") {
-          buffer.push(key); //prevent the case of ... 04
+          buffer.push(key); 
         } else {
           buffer.push(num + key);
         }
       } else {
-        /*here, last are operators*/
+       
         buffer.push(key);
       }
       break;
@@ -41,19 +40,16 @@ document.body.addEventListener("click", (e) => {
         buffer.pop();
       }
 
-      //handling if last is number and already with period
-      //re-establish last so that we prevent case of add . if preceding is "2.1+"
+      
       last = buffer[buffer.length - 1]
       if (last && last.indexOf(".") !== -1) {
-        //console.log("Already dot");
+        
         break;
       }
 
-      // if (!buffer.some((element) => element === ".")) {
-      //   buffer.push(".");
-      // }
+      
       num = buffer.pop();
-      buffer.push(num + "."); /*merge num and dot*/
+      buffer.push(num + "."); 
 
       break;
 
@@ -110,7 +106,7 @@ document.body.addEventListener("click", (e) => {
         buffer = [result];
         displayResult = result.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         displayElement.textContent = displayResult;
-        return; /*special handling to display commas for computed number result*/
+        return; 
       } catch (err) {
         buffer = ["0"];
       } finally {
